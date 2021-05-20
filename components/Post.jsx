@@ -57,7 +57,7 @@ export default function Post({ post }) {
           </div>
           <div className="post-body">
             <BlockContent
-              blocks={post.body}
+              blocks={post?.body}
               projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
               dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
             />
