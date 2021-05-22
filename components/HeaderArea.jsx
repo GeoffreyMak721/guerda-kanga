@@ -53,9 +53,11 @@ export default function HeaderArea({ headerTop = true }) {
           <div className="row">
             <div className="col-lg-12">
               <nav className="navbar navbar-expand-lg">
-                <a className="navbar-brand" href="index.html">
-                  <img src="/images/logo.png" alt="Logo" />
-                </a>
+                <Link href="/">
+                  <a className="navbar-brand">
+                    <img src="/images/logo.png" alt="Logo" />
+                  </a>
+                </Link>
                 <button
                   className="navbar-toggler"
                   type="button"
@@ -76,7 +78,7 @@ export default function HeaderArea({ headerTop = true }) {
                 >
                   <ul id="nav" className="navbar-nav ml-auto">
                     <li className="nav-item active">
-                      <Link href="/#home">
+                      <Link href="/">
                         <a className="page-scroll">Accueil</a>
                       </Link>
                     </li>
@@ -96,7 +98,7 @@ export default function HeaderArea({ headerTop = true }) {
                       </Link>
                     </li>
                     <li className="nav-item">
-                      <Link href="/#blog">
+                      <Link href="/blog">
                         <a className="page-scroll">Blog</a>
                       </Link>
                     </li>

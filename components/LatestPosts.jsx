@@ -2,7 +2,7 @@ import React from "react";
 
 import Link from "next/link";
 import { imageBuilder } from "../lib/sanity";
-
+import Date from "../components/date";
 export default function LatestPosts({ posts }) {
   return (
     <div className="widget latest-posts">
@@ -30,8 +30,8 @@ export default function LatestPosts({ posts }) {
                     <strong>{post?.title}</strong>
                     <div className="d-flex align-items-center">
                       <div className="comments">
-                        <i className="icon-comment"></i>{" "}
-                        {post?.comments?.length || 0}
+                        <i class="icon-clock"></i>{" "}
+                        <Date dateString={post?.date} />
                       </div>
                     </div>
                   </div>

@@ -5,7 +5,7 @@ export default function HeaderSlider() {
     <div id="blog-home" className="header_slider slider-active">
       <div
         className="single_slider blog bg_cover d-flex align-items-center"
-        style={{ backgroundImage: "url(/images/hero-bg.jpg)" }}
+        style={{ backgroundImage: "url(/images/slider-1.jpg)" }}
       >
         <div className="container">
           <div className="row">

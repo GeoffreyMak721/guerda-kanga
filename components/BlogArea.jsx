@@ -27,16 +27,19 @@ export default function BlogArea({ posts }) {
               <div className="col-lg-4 col-md-7">
                 <div className="single_blog mt-30">
                   <div className="blg_image">
-                    <img src={imageBuilder(post.coverImage).url()} alt="blog" />
+                    <img
+                      src={imageBuilder(post?.coverImage).url()}
+                      alt="blog"
+                    />
                   </div>
                   <div className="blg_content">
                     <h4 className="blog_title">
-                      <Link as={`/blog/${post.slug}`} href="/blog/[slug]">
-                        <a>{post.title}</a>
+                      <Link as={`/blog/${post?.slug}`} href="/blog/[slug]">
+                        <a>{post?.title}</a>
                       </Link>
                     </h4>
-                    <p>{post.excerpt}</p>
-                    <Link as={`/blog/${slug.post}`} href="/blog/[slug]">
+                    <p>{post?.excerpt}</p>
+                    <Link as={`/blog/${post?.slug}`} href="/blog/[slug]">
                       <a className="more">Lire Plus...</a>
                     </Link>
                   </div>

@@ -63,7 +63,7 @@ export default function Post({ post }) {
             />
           </div>
 
-          <div className="posts-nav d-flex justify-content-between align-items-stretch flex-column flex-md-row">
+          {/* <div className="posts-nav d-flex justify-content-between align-items-stretch flex-column flex-md-row">
             <a
               href="#"
               className="prev-post text-left d-flex align-items-center"
@@ -88,10 +88,10 @@ export default function Post({ post }) {
                 <i className="fa fa-angle-right"> </i>
               </div>
             </a>
-          </div>
+          </div> */}
           <div className="post-comments">
             <header>
-              <h3 className="h6">
+              <h3 className="h4">
                 Commentaires{" "}
                 <span className="no-of-comments">
                   ({post?.comments?.length || 0})

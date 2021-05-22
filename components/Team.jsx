@@ -19,8 +19,7 @@ export default function Team() {
           <div className="col-lg-3 col-sm-6">
             <div className="single_lawyer mt-30 text-center">
               <div className="lawyer_image">
-                <img src="images/lawyer-1.jpg" alt="lawyer" />
-
+                <img src="images/guerda.jpg" alt="guerda kanga" />
                 <ul className="social">
                   <li>
                     <a href="#">

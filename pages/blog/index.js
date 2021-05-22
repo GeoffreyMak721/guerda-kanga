@@ -2,19 +2,15 @@ import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Head from "next/head";
 
-import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api";
+import { getAllPostsWithSlug, getAllPosts } from "../../lib/api";
 
 import BlogHeader from "../../components/BlogHeader";
-import Post from "../../components/Post";
+import AllPosts from "../../components/AllPosts";
 import PostSearch from "../../components/PostSearch";
 import LatestPosts from "../../components/LatestPosts";
 import HeaderArea from "../../components/HeaderArea";
-export default function Blog({ post, morePosts, preview }) {
-  const router = useRouter();
-  if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />;
-  }
-  console.log("morePosts", morePosts);
+
+export default function Blog({ allPosts, preview }) {
   return (
     <>
       <Head>
@@ -28,12 +24,12 @@ export default function Blog({ post, morePosts, preview }) {
       <BlogHeader />
       <div className="container">
         <div className="row">
-          <main className="post blog-post col-lg-8">
-            <Post post={post} />
+          <main className="posts-listing col-lg-8">
+            <AllPosts posts={allPosts} />
           </main>
           <aside className="col-lg-4">
             {/* <PostSearch /> */}
-            <LatestPosts posts={morePosts} />
+            <LatestPosts posts={allPosts?.slice(0, 6)} />
           </aside>
         </div>
       </div>
@@ -42,26 +38,12 @@ export default function Blog({ post, morePosts, preview }) {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const data = await getPostAndMorePosts(params.slug, preview);
+  const allPosts = await getAllPosts(preview);
   return {
     props: {
       preview,
-      post: data?.post || null,
-      morePosts: data?.morePosts || null,
+      allPosts,
     },
     revalidate: 1,
-  };
-}
-
-export async function getStaticPaths() {
-  const allPosts = await getAllPostsWithSlug();
-  return {
-    paths:
-      allPosts?.map((post) => ({
-        params: {
-          slug: post.slug,
-        },
-      })) || [],
-    fallback: true,
   };
 }

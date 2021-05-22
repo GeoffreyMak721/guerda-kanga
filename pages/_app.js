@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="stylesheet" href="/css/animate.css" />
         <link rel="stylesheet" href="/css/magnific-popup.css" />
         <link rel="stylesheet" href="/css/slick.css" />
-        <link rel="stylesheet" href="fonts/lineicons/font-css/LineIcons.css" />
+        <link rel="stylesheet" href="/fonts/lineicons/font-css/LineIcons.css" />
 
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
         <link rel="stylesheet" href="/css/font-awesome.min.css" />
